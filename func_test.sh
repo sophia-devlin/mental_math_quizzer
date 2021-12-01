@@ -18,5 +18,17 @@ test_construct_number () {
 	echo "Should be 420: $(construct_number 420)"
 }
 
+test_play_number () {
+	echo "1:"; play_number "$(construct_number 1)"
+	echo "12:"; play_number "$(construct_number 12)"
+	echo "15:"; play_number "$(construct_number 15)"
+	echo "19:"; play_number "$(construct_number 19)"
+	echo "20:"; play_number "$(construct_number 20)"
+	echo "32:"; play_number "$(construct_number 32)"
+	echo "100:"; play_number "$(construct_number 100)"
+	echo "206:"; play_number "$(construct_number 206)"
+	echo "999:"; play_number "$(construct_number 999)"
+}
 
-test_construct_number
+#test_construct_number
+test_play_number
