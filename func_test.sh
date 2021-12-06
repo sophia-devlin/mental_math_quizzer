@@ -30,5 +30,24 @@ test_play_number () {
 	echo "999:"; play_number "$(construct_number 999)"
 }
 
+test_generate_mult_problem () {
+	inc=0
+	while [ $inc -lt 10 ]
+	do
+		generate_mult_problem
+		inc=$(($inc + 1))
+	done
+}
+
+test_play_mult_problem () {
+	play_mult_problem 9 12 108
+	sleep 2
+	play_mult_problem 7 83 581
+	sleep 2
+	play_mult_problem 3 99 297
+}
+
 #test_construct_number
-test_play_number
+#test_play_number
+#test_generate_mult_problem
+test_play_mult_problem

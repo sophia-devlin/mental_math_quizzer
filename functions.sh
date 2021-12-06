@@ -119,3 +119,22 @@ play_number () {
 		aplay ${audio_filepath}${elem}.wav
 	done
 }
+
+generate_mult_problem () {
+	first_factor=$((1 + $RANDOM % 9))
+	second_factor=$((1 + $RANDOM % 99))
+	product=$(($first_factor * $second_factor))
+	echo "$first_factor $second_factor $product"
+}
+
+play_mult_problem () {
+	first_factor=$1
+	second_factor=$2
+	product=$3
+	delay=${4:-10}
+	play_number "$(construct_number $first_factor)"
+	aplay ${audio_filepath}times.wav
+	play_number "$(construct_number $second_factor)"
+	sleep $delay
+	play_number "$(construct_number $product)"
+}
