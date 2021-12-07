@@ -115,8 +115,7 @@ play_number () {
 	num_array=( $num_string )
 	for elem in "${num_array[@]}"
 	do
-		echo "loop"
-		aplay ${audio_filepath}${elem}.wav
+		aplay -q ${audio_filepath}${elem}.wav
 	done
 }
 
@@ -133,7 +132,7 @@ play_mult_problem () {
 	product=$3
 	delay=${4:-10}
 	play_number "$(construct_number $first_factor)"
-	aplay ${audio_filepath}times.wav
+	aplay -q ${audio_filepath}times.wav
 	play_number "$(construct_number $second_factor)"
 	sleep $delay
 	play_number "$(construct_number $product)"
